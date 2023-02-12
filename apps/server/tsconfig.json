@@ -1,5 +1,11 @@
 {
   "extends": "@chimera/tsconfig/base",
+  "compilerOptions": {
+    "outDir": "dist",
+    "typeRoots": [
+      "./src/types"
+    ]
+  },
   "include": ["**/*.ts"],
   "exclude": ["node_modules"]
 }
