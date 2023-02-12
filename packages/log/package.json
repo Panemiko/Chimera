@@ -1,0 +1,17 @@
+{
+  "name": "@chimera/log",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "rm -fr ./dist && tsc"
+  },
+  "dependencies": {
+    "chalk": "^5.2.0"
+  },
+  "devDependencies": {
+    "@chimera/eslint-config": "workspace:*",
+    "@chimera/tsconfig": "workspace:*",
+    "@types/node": "^17.0.45",
+    "eslint": "^8.34.0",
+    "typescript": "^4.9.5"
+  }
+}

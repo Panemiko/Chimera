@@ -1,0 +1,5 @@
+{
+  "extends": "@chimera/tsconfig/base",
+  "include": ["**/*.ts"],
+  "exclude": ["node_modules"]
+}
