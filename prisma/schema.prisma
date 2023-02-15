@@ -11,9 +11,84 @@ datasource db {
 }
 
 model Rpg {
-  id     String @id @default(cuid())
-  name   String
-  author String
+  id        String      @id @default(cuid())
+  name      String
+  author    String
+  Character Character[]
+  Attribute Attribute[]
 
   @@map("rpgs")
+}
+
+model Character {
+  id                  String               @id @default(cuid())
+  rpg                 Rpg                  @relation(fields: [rpgId], references: [id])
+  name                String
+  age                 Int
+  picture             String
+  level               Int
+  life                Int
+  maxLife             Int
+  sanity              Int
+  maxSanity           Int
+  maxWeight           Float
+  notes               String
+  rpgId               String
+  characterAttributes CharacterAttribute[]
+  characterSkills     CharacterSkill[]
+  abilities           Ability[]
+  items               Item[]
+}
+
+model Attribute {
+  id                 String               @id @default(cuid())
+  rpg                Rpg                  @relation(fields: [rpgId], references: [id])
+  name               String
+  tag                String
+  rpgId              String
+  Skill              Skill[]
+  CharacterAttribute CharacterAttribute[]
+}
+
+model Skill {
+  id             String           @id @default(cuid())
+  name           String
+  attribute      Attribute        @relation(fields: [attributeId], references: [id])
+  attributeId    String
+  CharacterSkill CharacterSkill[]
+}
+
+model CharacterAttribute {
+  id          String    @id @default(cuid())
+  character   Character @relation(fields: [characterId], references: [id])
+  attribute   Attribute @relation(fields: [attributeId], references: [id])
+  level       Int       @default(0)
+  characterId String
+  attributeId String
+}
+
+model CharacterSkill {
+  id          String    @id @default(cuid())
+  character   Character @relation(fields: [characterId], references: [id])
+  skill       Skill     @relation(fields: [skillId], references: [id])
+  level       Int       @default(0)
+  characterId String
+  skillId     String
+}
+
+model Ability {
+  id          String    @id @default(cuid())
+  character   Character @relation(fields: [characterId], references: [id])
+  name        String
+  level       Int       @default(0)
+  characterId String
+}
+
+model Item {
+  id          String    @id @default(cuid())
+  character   Character @relation(fields: [characterId], references: [id])
+  name        String
+  weight      Float     @default(0)
+  quantity    Int       @default(0)
+  characterId String
 }

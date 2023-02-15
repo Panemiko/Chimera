@@ -3,8 +3,10 @@ import type { AddressInfo } from 'net'
 import next from 'next'
 import { parse } from 'url'
 
-const PORT = parseInt(process.env.PORT || '3000', 10)
-const DEVELOPMENT = process.env.NODE_ENV !== 'production'
+import { env } from '@/env/env'
+
+const PORT = env.PORT || 3000
+const DEVELOPMENT = env.NODE_ENV !== 'production'
 
 const app = next({ dev: DEVELOPMENT })
 const handle = app.getRequestHandler()
