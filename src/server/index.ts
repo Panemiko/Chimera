@@ -3,7 +3,7 @@
  * When using serverless functions, you are unable to use socket.io
  *
  * The rest of the application is just like a normal next app, so if you
- * don't plan to edit here, ignore this
+ * don't plan to modify here, ignore this
  */
 
 import express from 'express'
@@ -25,8 +25,6 @@ const nextHandle = nextApp.getRequestHandler()
 nextApp.prepare().then(() => {
   const app = express()
   const server = createServer(app)
-
-  app.use(express.json())
 
   app.all('*', (req, res) => {
     const parsedUrl = parse(req.url || 'localhost:3000', true)
