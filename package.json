@@ -7,14 +7,23 @@
   },
   "dependencies": {
     "@prisma/client": "^4.10.1",
+    "@tanstack/react-query": "^4.24.6",
+    "@trpc/client": "^10.11.1",
+    "@trpc/next": "^10.11.1",
+    "@trpc/react-query": "^10.11.1",
+    "@trpc/server": "^10.11.1",
+    "chalk": "^5.2.0",
     "cross-env": "^7.0.3",
+    "express": "^4.18.2",
     "next": "latest",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "socket.io": "^4.6.0",
+    "type-fest": "^3.5.7",
     "zod": "^3.20.6"
   },
   "devDependencies": {
+    "@types/express": "^4.17.17",
     "@types/node": "^18.11.5",
     "@types/react": "^18.0.23",
     "@types/react-dom": "^18.0.7",
