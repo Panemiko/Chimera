@@ -1,5 +1,7 @@
 import { httpBatchLink } from '@trpc/client'
 import { createTRPCNext } from '@trpc/next'
+import type { inferRouterInputs, inferRouterOutputs } from '@trpc/server'
+import superjson from 'superjson'
 
 import type { AppRouter } from '../server/routers/_app'
 
@@ -19,8 +21,9 @@ function getBaseUrl() {
 
 export const trpc = createTRPCNext<AppRouter>({
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  config({ ctx }) {
+  config() {
     return {
+      transformer: superjson,
       links: [
         httpBatchLink({
           /**
@@ -41,3 +44,17 @@ export const trpc = createTRPCNext<AppRouter>({
    **/
   ssr: false,
 })
+
+/**
+ * Inference helper for inputs.
+ *
+ * @example type HelloInput = RouterInputs['example']['hello']
+ */
+export type RouterInputs = inferRouterInputs<AppRouter>
+
+/**
+ * Inference helper for outputs.
+ *
+ * @example type HelloOutput = RouterOutputs['example']['hello']
+ */
+export type RouterOutputs = inferRouterOutputs<AppRouter>

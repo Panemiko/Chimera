@@ -12,16 +12,21 @@ export default function HomePage() {
   return (
     <Page>
       <SelectorLayout loading={rpgsQuery.isLoading}>
-        <h1>Selecione o RPG</h1>
-        <div>
-          {rpgsQuery.data.map((rpg, index) => (
-            <Selection
-              name={rpg.name}
-              comment={rpg.author}
-              href={`rpg/${rpg.id}`}
-              key={index}
-            />
-          ))}
+        <div className='px-6 py-8'>
+          <h1 className='text-neutral12 text-3xl font-bold mb-8'>
+            Selecione o RPG
+          </h1>
+          <div>
+            {rpgsQuery.data &&
+              rpgsQuery.data.map((rpg, index) => (
+                <Selection
+                  name={rpg.name}
+                  comment={rpg.author}
+                  href={`rpg/${rpg.id}`}
+                  key={index}
+                />
+              ))}
+          </div>
         </div>
       </SelectorLayout>
     </Page>
