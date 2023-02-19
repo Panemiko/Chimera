@@ -1,5 +1,6 @@
 {
   "name": "chimera",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "cross-env NODE_ENV=development tsnd --ignore-watch .next --project tsconfig.server.json -r tsconfig-paths/register src/server",

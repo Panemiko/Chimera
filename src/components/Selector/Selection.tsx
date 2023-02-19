@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { AiOutlineRight as RightArrow } from 'react-icons/ai'
 
 interface SelectionProps {
   name: string
@@ -11,11 +12,16 @@ export function Selection(props: SelectionProps) {
 
   return (
     <Link
-      className='bg-neutral3 w-[stretch] hover:bg-neutral4 active:neutral5 border-2 border-primary6 px-6 py-4'
+      className='bg-primary3 w-[stretch] hover:bg-primary4 active:primary5 border-2 border-primary6 px-8 py-4 rounded-md flex items-center justify-between mb-6'
       href={href}
     >
-      <span className='text-neutral12 text-xl font-medium'>{name}</span>
-      <span className='text-neutral11 text-lg'>{comment}</span>
+      <div className='flex flex-col'>
+        <span className='text-primary12 text-2xl font-medium'>{name}</span>
+        <span className='text-primary11 font-light text-lg'>{comment}</span>
+      </div>
+      <div className='ml-4'>
+        <RightArrow className='fill-primary11 h-4 w-4' />
+      </div>
     </Link>
   )
 }
