@@ -9,3 +9,8 @@ export const environmentSchema = z.object({
       if (port) return parseInt(port)
     }),
 })
+
+export const env = environmentSchema.parse({
+  NODE_ENV: process.env.NODE_ENV,
+  PORT: process.env.PORT,
+})

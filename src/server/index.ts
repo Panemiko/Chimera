@@ -12,7 +12,7 @@ import type { AddressInfo } from 'net'
 import next from 'next'
 import { parse } from 'url'
 
-import { env } from '@/env/env'
+import { env } from '@/env'
 
 import { log } from './log'
 

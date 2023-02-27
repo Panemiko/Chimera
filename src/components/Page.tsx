@@ -5,6 +5,10 @@ interface PageProps {
   title?: string
 }
 
+/**
+ * Manages the page metadata.
+ * Must be the parent of the page component
+ */
 export function Page(props: PageProps) {
   const { children, title } = props
 

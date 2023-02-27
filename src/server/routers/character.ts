@@ -3,7 +3,7 @@ import { z } from 'zod'
 import { publicProcedure, router } from '@/server/trpc'
 
 export const characterRouter = router({
-  getByRpg: publicProcedure
+  getCharactersByRpg: publicProcedure
     .input(z.object({ rpgId: z.string().cuid2() }))
     .query(async ({ ctx, input }) => {
       const { rpgId } = input
