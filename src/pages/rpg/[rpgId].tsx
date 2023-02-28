@@ -1,6 +1,8 @@
 import { useRouter } from 'next/router'
+import { AiFillSetting as SettingsIcon } from 'react-icons/ai'
 
 import { Page } from '@/components/Page'
+import { CategoryName } from '@/components/Selector/CategoryName'
 import { Selection } from '@/components/Selector/Selection'
 import { SelectorLayout } from '@/layouts/Selector'
 import { trpc } from '@/utils/trpc'
@@ -30,12 +32,17 @@ export default function RpgPage() {
         subtitle='Rpg'
       >
         <div>
+          <Selection
+            name='Painel'
+            href={`${basePath}/dashboard`}
+            Icon={SettingsIcon}
+            showArrow={false}
+          />
+          <CategoryName>Personagens</CategoryName>
           {charactersQuery.data?.map((character, index) => (
             <Selection
               name={character.name}
               href={`${basePath}/character/${character.id}`}
-              comment={character.age.toString()}
-              commentSide='right'
               key={index}
             />
           ))}
