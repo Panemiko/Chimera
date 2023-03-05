@@ -45,8 +45,8 @@ export function Selection(props: SelectionProps) {
               : 'gap-3 items-center break-word justify-between w-stretch',
           ])}
         >
-          <span className='text-primary12 text-2xl font-medium'>{name}</span>
-          {comment && <span className='text-primary11 text-lg'>{comment}</span>}
+          <span className='text-primary12 text-xl font-medium'>{name}</span>
+          {comment && <span className='text-primary11 text-md'>{comment}</span>}
         </div>
       </div>
       {showArrow && (

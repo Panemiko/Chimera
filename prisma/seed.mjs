@@ -11,8 +11,8 @@ async function seedDatabase() {
     },
   })
 
-  // Create 9 random characters
-  for (let i = 0; i <= 9; i++) {
+  // Create 3 random characters
+  for (let i = 0; i <= 3; i++) {
     await database.character.create({
       data: {
         name: faker.name.fullName(),

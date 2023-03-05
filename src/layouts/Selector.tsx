@@ -35,11 +35,11 @@ export function SelectorLayout(props: SelectorLayoutProps) {
       <div className='flex top-0 left-0 sticky justify-between shadow-xl shadow-neutral1 bg-neutral1 pt-4 mb-8'>
         <div className='flex flex-col'>
           {subtitle && (
-            <h2 className='text-neutral11 uppercase text-2xl font-medium'>
+            <h2 className='text-neutral11 uppercase text-xl font-medium'>
               {subtitle}
             </h2>
           )}
-          <h1 className='text-neutral12 break-all mr-2 text-5xl font-bold mb-5'>
+          <h1 className='text-neutral12 break-all mr-2 text-4xl font-bold mb-5'>
             {title}
           </h1>
         </div>
