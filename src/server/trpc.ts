@@ -1,8 +1,11 @@
 import type { inferAsyncReturnType } from '@trpc/server'
 import { initTRPC } from '@trpc/server'
+import EventEmitter from 'events'
 import superjson from 'superjson'
 
 import { database } from '@/server/database'
+
+export const ee = new EventEmitter()
 
 export function createContext() {
   return {

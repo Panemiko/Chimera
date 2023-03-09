@@ -1,9 +1,14 @@
-import { httpBatchLink } from '@trpc/client'
+import { createWSClient, httpBatchLink, wsLink } from '@trpc/client'
 import { createTRPCNext } from '@trpc/next'
 import type { inferRouterInputs, inferRouterOutputs } from '@trpc/server'
 import superjson from 'superjson'
 
-import type { AppRouter } from '../server/routers/_app'
+import { env } from '@/env'
+import type { AppRouter } from '@/server/routers/_app'
+
+const wsClient = createWSClient({
+  url: env.NEXT_PUBLIC_WS_URL || 'http://localhost:3001',
+})
 
 function getBaseUrl() {
   if (typeof window !== 'undefined')
@@ -25,6 +30,9 @@ export const trpc = createTRPCNext<AppRouter>({
     return {
       transformer: superjson,
       links: [
+        wsLink({
+          client: wsClient,
+        }),
         httpBatchLink({
           /**
            * If you want to use SSR, you need to use the server's full URL

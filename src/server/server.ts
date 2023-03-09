@@ -1,18 +1,24 @@
 /**
- * This file is required to disable serverless functions
- * When using serverless functions, you are unable to use socket.io
+ * This file handles the production server
  *
- * The rest of the application is just like a normal next app, so if you
- * don't plan to modify here, ignore this
+ * Due to the use of websockets, the serverless feature of Next.js
+ * is disabled
+ *
+ * This script isn't used on development server.
+ * For this go to the /src/server/serverDev.ts file
  */
 
+import { applyWSSHandler } from '@trpc/server/adapters/ws'
 import express from 'express'
 import { createServer } from 'http'
 import type { AddressInfo } from 'net'
 import next from 'next'
 import { parse } from 'url'
+import ws from 'ws'
 
 import { env } from '@/env'
+import { appRouter } from '@/server/routers/_app'
+import { createContext } from '@/server/trpc'
 
 import { log } from './log'
 
@@ -22,9 +28,17 @@ const DEVELOPMENT = env.NODE_ENV !== 'production'
 const nextApp = next({ dev: DEVELOPMENT })
 const nextHandle = nextApp.getRequestHandler()
 
-nextApp.prepare().then(() => {
+void nextApp.prepare().then(() => {
   const app = express()
   const server = createServer(app)
+
+  const wss = new ws.Server({ server })
+  const handler = applyWSSHandler({ wss, router: appRouter, createContext })
+
+  process.on('SIGTERM', () => {
+    console.log('SIGTERM')
+    handler.broadcastReconnectNotification()
+  })
 
   app.all('*', (req, res) => {
     const parsedUrl = parse(req.url || 'localhost:3000', true)
