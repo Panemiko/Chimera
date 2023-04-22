@@ -1,4 +1,5 @@
 {
+  "name": "chimera",
   "private": true,
   "scripts": {
     "build": "turbo run build",
@@ -8,10 +9,9 @@
   },
   "devDependencies": {
     "eslint": "^7.32.0",
-    "eslint-config-custom": "workspace:*",
+    "@chimera/eslint-config": "workspace:*",
     "prettier": "^2.5.1",
     "turbo": "latest"
   },
-  "packageManager": "pnpm@7.15.0",
-  "name": "chimera"
+  "packageManager": "pnpm@7.15.0"
 }
