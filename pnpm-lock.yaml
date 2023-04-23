@@ -22,6 +22,9 @@ importers:
 
   apps/web:
     dependencies:
+      '@chimera/tsconfig':
+        specifier: workspace:*
+        version: link:../../packages/tsconfig
       firebase:
         specifier: ^9.20.0
         version: 9.20.0
@@ -38,9 +41,6 @@ importers:
       '@chimera/eslint-config':
         specifier: workspace:*
         version: link:../../packages/eslint-config
-      '@chimera/tsconfig':
-        specifier: workspace:*
-        version: link:../../packages/tsconfig
       '@types/node':
         specifier: ^17.0.12
         version: 17.0.45

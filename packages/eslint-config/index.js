@@ -1,5 +1,3 @@
-const path = require("path");
-
 /** @type {import("eslint").Linter.Config} */
 module.exports = {
   overrides: [
@@ -15,15 +13,9 @@ module.exports = {
         "plugin:@typescript-eslint/recommended-requiring-type-checking",
       ],
       files: ["*.ts", "*.tsx"],
-      parserOptions: {
-        project: "@chimera/tsconfig/nextjs.json",
-      },
     },
   ],
   parser: "@typescript-eslint/parser",
-  parserOptions: {
-    project: "@chimera/tsconfig/base.json",
-  },
   plugins: ["@typescript-eslint", "prettier", "simple-import-sort"],
   extends: ["next/core-web-vitals", "plugin:@typescript-eslint/recommended"],
   rules: {

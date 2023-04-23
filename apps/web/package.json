@@ -15,8 +15,8 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@chimera/eslint-config": "workspace:*",
     "@chimera/tsconfig": "workspace:*",
+    "@chimera/eslint-config": "workspace:*",
     "@types/node": "^17.0.12",
     "@types/react": "18.0.38",
     "@types/react-dom": "18.0.11",

@@ -1,5 +1,10 @@
 {
   "name": "@chimera/tsconfig",
+  "files": [
+    "nextjs.json",
+    "base.json",
+    "react-library.json"
+  ],
   "publishConfig": {
     "access": "public"
   }
