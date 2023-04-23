@@ -9,20 +9,21 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "firebase": "^9.20.0",
     "next": "13.3.1",
     "react": "18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@chimera/eslint-config": "workspace:*",
+    "@chimera/tsconfig": "workspace:*",
     "@types/node": "^17.0.12",
     "@types/react": "18.0.38",
     "@types/react-dom": "18.0.11",
     "autoprefixer": "10.4.14",
-    "postcss": "8.4.23",
     "eslint": "^7.32.0",
-    "@chimera/eslint-config": "workspace:*",
+    "postcss": "8.4.23",
     "tailwindcss": "3.3.1",
-    "@chimera/tsconfig": "workspace:*",
     "typescript": "5.0.4"
   }
 }
