@@ -9,14 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "firebase": "^9.20.0",
+    "@chimera/firebase": "workspace:*",
     "next": "13.3.1",
     "react": "18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@chimera/tsconfig": "workspace:*",
     "@chimera/eslint-config": "workspace:*",
+    "@chimera/tsconfig": "workspace:*",
     "@types/node": "^17.0.12",
     "@types/react": "18.0.38",
     "@types/react-dom": "18.0.11",

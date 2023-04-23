@@ -1,12 +1,6 @@
-import firebase from 'firebase/app'
-import {getFirestore} from 'firebase/firestore'
+import { createFirebase } from "@chimera/firebase";
+import firebaseConfig from "firebase-config.js";
 
-import firebaseConfig from 'firebase-config.js'
+if (!firebaseConfig) throw new Error("Firebase settings undefined");
 
-if (!firebaseConfig) throw new Error('Firebase config undefined')
-
-if (firebase.getApps().length == 0) {
-  firebase.initializeApp(firebaseConfig);
-}
-
-export const firestore = getFirestore()
+export const firebase = createFirebase(firebaseConfig);

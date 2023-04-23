@@ -1,0 +1,9 @@
+{
+  "extends": "@chimera/tsconfig/base.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": { "@/*": ["./src/*"] }
+  },
+  "include": ["."],
+  "exclude": ["dist", "build", "node_modules"]
+}
