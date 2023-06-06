@@ -15,7 +15,11 @@ export const Page: React.FC<{ title?: string; children?: React.ReactNode }> = ({
       <Head>
         <title>{pageTitle}</title>
       </Head>
-      <div className={clsx("bg-mauve1", inter.className)}>{children}</div>
+      <div
+        className={clsx("bg-mauve1 h-screen text-whiteA12", inter.className)}
+      >
+        {children}
+      </div>
     </>
   );
 };
