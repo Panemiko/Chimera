@@ -1,3 +1,9 @@
+import { Page } from "@/components/Page";
+
 export default function Home() {
-  return <h1>Chimera</h1>;
+  return (
+    <Page>
+      <h1>Chimera</h1>
+    </Page>
+  );
 }
