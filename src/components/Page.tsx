@@ -1,28 +1,24 @@
-import { titleBuilder } from "@/utils/title";
 import clsx from "clsx";
 import { Inter } from "next/font/google";
 import Head from "next/head";
-import { Loading } from "./Loading";
+
+import { titleBuilder } from "@/utils/title";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const Page: React.FC<{
   title?: string;
   children?: React.ReactNode;
-  loading?: boolean;
-}> = ({ children, title, loading = false }) => {
-  const pageTitle = titleBuilder(loading ? undefined : title);
-  const content = loading ? <Loading /> : children;
-
+}> = ({ children, title }) => {
   return (
     <>
       <Head>
-        <title>{pageTitle}</title>
+        <title>{titleBuilder(title)}</title>
       </Head>
       <div
         className={clsx("bg-mauve1 h-screen text-whiteA12", inter.className)}
       >
-        {content}
+        {children}
       </div>
     </>
   );

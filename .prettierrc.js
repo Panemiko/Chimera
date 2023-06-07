@@ -4,6 +4,8 @@ module.exports = {
   trailingComma: "all",
   singleQuote: false,
   semi: true,
+  importOrder: ["^@/(.*)$", "^[./]"],
   importOrderSeparation: true,
   importOrderSortSpecifiers: true,
+  plugins: ["@trivago/prettier-plugin-sort-imports"],
 };
