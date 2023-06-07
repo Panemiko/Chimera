@@ -7,7 +7,6 @@ export default function SignInPage() {
 
   return (
     <AuthLayout title="Entrar">
-      {auth.get()?.email}
       <SignInButton />
     </AuthLayout>
   );
