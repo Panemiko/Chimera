@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@hookstate/core": "^4.0.1",
     "@radix-ui/colors": "^0.1.8",
     "@types/node": "20.2.5",
     "@types/react": "18.2.8",

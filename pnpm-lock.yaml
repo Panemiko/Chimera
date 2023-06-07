@@ -1,6 +1,9 @@
 lockfileVersion: '6.0'
 
 dependencies:
+  '@hookstate/core':
+    specifier: ^4.0.1
+    version: 4.0.1(react@18.2.0)
   '@radix-ui/colors':
     specifier: ^0.1.8
     version: 0.1.8
@@ -707,6 +710,14 @@ packages:
       long: 4.0.0
       protobufjs: 7.2.3
       yargs: 17.7.2
+    dev: false
+
+  /@hookstate/core@4.0.1(react@18.2.0):
+    resolution: {integrity: sha512-Uh2D8Z0z/pqOJ7t+SfC+2sj13JQcB4yFhtL+T1choCaBxTSlgOS/CKRBohgJ4cjTKoxOmTT8uSQysu3gUjX+Gw==}
+    peerDependencies:
+      react: ^16.8.6 || ^17.0.0 || ^18.0.0
+    dependencies:
+      react: 18.2.0
     dev: false
 
   /@humanwhocodes/config-array@0.11.10:
