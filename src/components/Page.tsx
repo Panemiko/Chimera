@@ -1,7 +1,11 @@
+import { useHookstateEffect } from "@hookstate/core";
 import clsx from "clsx";
 import { Inter } from "next/font/google";
 import Head from "next/head";
+import { useRouter } from "next/router";
 
+import { useAuth } from "@/hooks/useAuth";
+import { authState } from "@/utils/state";
 import { titleBuilder } from "@/utils/title";
 
 const inter = Inter({ subsets: ["latin"] });

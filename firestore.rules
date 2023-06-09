@@ -2,8 +2,20 @@ rules_version = '2';
 
 service cloud.firestore {
   match /databases/{database}/documents {
+    // Disallow all by default
     match /{document=**} {
       allow read, write: if false;
+    }
+
+    // Allow only if the user is authed and is 
+    // requesting their own characters
+    match /characters/{document} {
+      allow read, write: if request.auth != null && request.auth.uid == resource.data.playerId;
+    }
+
+    // Allow the user to create and get their own document
+    match /users/{uid} {
+      allow create, get: if request.auth.uid == uid 
     }
   }
 }
